@@ -20,7 +20,7 @@ export async function requester<Payload>({ option }: { option: AxiosRequestConfi
       status: result.status,
       payload: result.data,
     };
-  } catch (error) {
+  } catch (error: any) {
     // 서버로부터 에러가 내려온 경우
     if (error.response) {
       const errResponse = error.response;

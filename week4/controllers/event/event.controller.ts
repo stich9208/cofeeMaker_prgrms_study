@@ -169,7 +169,7 @@ export default class EventController {
         order: validateReq.data.body.order,
       });
       return res.json(result);
-    } catch (err) {
+    } catch (err: any) {
       return res.status(500).send(err.toString());
     }
   }
@@ -207,7 +207,7 @@ export default class EventController {
         guestId: validateReq.data.params.guestId,
       });
       return res.end();
-    } catch (err) {
+    } catch (err: any) {
       return res.status(500).send(err.toString());
     }
   }
@@ -232,7 +232,7 @@ export default class EventController {
         eventId: validateReq.data.params.eventId,
       });
       return res.json(result);
-    } catch (err) {
+    } catch (err: any) {
       return res.status(500).send(err.toString());
     }
   }

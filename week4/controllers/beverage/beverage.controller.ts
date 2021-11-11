@@ -13,7 +13,7 @@ export default class BeverageController {
     }
     try {
       await FirebaseAdmin.getInstance().Auth.verifyIdToken(token);
-    } catch (err) {
+    } catch (err: any) {
       return res.status(400).end();
     }
     const validateReq = validateParamWithData<IAddBeverageReq>(
@@ -30,7 +30,7 @@ export default class BeverageController {
     try {
       const result = await Beverages.add({ ...validateReq.data.body });
       return res.json(result);
-    } catch (err) {
+    } catch (err: any) {
       return res.status(500).send(err.toString());
     }
   }
@@ -39,7 +39,7 @@ export default class BeverageController {
     try {
       const result = await Beverages.findAll();
       return res.json(result);
-    } catch (err) {
+    } catch (err: any) {
       return res.status(500).send(err.toString());
     }
   }
